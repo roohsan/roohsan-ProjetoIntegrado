@@ -1,0 +1,74 @@
+.body_master{
+font-family: "Roboto", sans-serif;
+
+}
+
+.nav_bar{
+	background-color: #22242A;
+	height: 80px;
+	
+}
+
+.nav_bar #logo{
+	margin: 10px;
+	padding: 20px;
+	width: 200px;
+	border-radius: 10px;
+	text-align: center;
+}
+
+.nav_bar a{
+	margin: 35px;
+	padding: 15px;
+	width: 200px;
+	border-radius: 10px;
+	text-align: center;
+}
+.nav_bar a:hover{
+	background-color: #1A537E;
+	transition: 0.5s;
+
+}
+.nav_light .navbar-brand {
+  color: white;
+}
+.nav_light .navbar-brand:hover, .navbar-light .navbar-brand:focus {
+  color: white;
+}
+.nav_light .navbar-nav .nav-link {
+  color: white;
+}
+.nav_light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
+  color: white;
+}
+
+.nav_light .navbar-toggler {
+  color: black;
+  border-color: white;
+}
+.nav_light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+.nav_light .navbar-text {
+  color: rgba(0, 0, 0, 0.55);
+}
+.nav_light .navbar-text a,
+.nav_light .navbar-text a:hover,
+.nav_light .navbar-text a:focus {
+  color: red;
+}
+
+.logout_botao{
+	margin: 15px;
+	padding: 15px;
+	width: 10px;
+	border-radius: 10px;
+	text-align: center;
+	cursor: pointer;
+
+}
+
+.conteudo{
+	background-color: grey;
+	height: 92vh;
+}
