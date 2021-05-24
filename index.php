@@ -27,6 +27,7 @@ session_start();
 
 
 		<div class="col-lg-4 centralizador ">
+
 	
 
 				<form action="control/login.php" method="post">

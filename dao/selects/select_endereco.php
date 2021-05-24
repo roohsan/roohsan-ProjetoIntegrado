@@ -3,4 +3,5 @@
   $sql_code_endereco = "select * FROM endereco";
   $sql_query_endereco = $conexao->query($sql_code_endereco) or die ($conexao->error);
   $linha_endereco = $sql_query_endereco->fetch_assoc();
+  $count_ende = mysqli_num_rows($sql_query_endereco);
 ?>

@@ -1,6 +1,5 @@
 .body_master{
 font-family: "Roboto", sans-serif;
-
 }
 
 .nav_bar{
@@ -69,6 +68,7 @@ font-family: "Roboto", sans-serif;
 }
 
 .conteudo{
-	background-color: grey;
-	height: 92vh;
+	background-image:url(../img/back.jpg);
+	height: 93vh;
+	width: 100%;
 }

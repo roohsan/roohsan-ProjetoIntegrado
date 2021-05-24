@@ -41,9 +41,9 @@
                             </button>
                             <div class="collapse navbar-collapse" id="navbarNav">
                                 <ul class="navbar-nav">
-                                  <li class="nav-item">
-                                    <a href="admin.php" class="nav-link"><i class="fas fa-desktop"></i> <span>HOME</span></a>
-                                  </li>
+                                    <li class="nav-item">
+                                      <a href="<?php echo $_SESSION ['perfil']?>" class="nav-link"><i class="fas fa-desktop"></i> <span>DASHBOARD</span></a>
+                                    </li>
                                   <li class="nav-item">
                                     <a href="produto.php" class="nav-link"><i class="fas fa-box-open"></i> <span>PRODUTOS</span></a>
                                   </li>
@@ -180,7 +180,7 @@
         <!--data-whatever dados para o modal-->
           <td>
             <a id="editar" type="button" data-toggle="modal" data-target="#edit_modal" data-backdrop="static" data-keyboard="false" data-whatever_id="<?php echo $linha ['id_Usuario'];?>" data-whatever_nome="<?php echo $linha ['nome'];?>"
-              data-whatever_usuario="<?php echo $linha ['usuario'];?>"><i class="fas fa-user-edit"></i></i></a> |
+              data-whatever_usuario="<?php echo $linha ['usuario'];?>"><i class="fas fa-user-edit"></i></a> |
               <!--fim data-whatever dados para o modal-->
             <a  id="deletar" href="javascript:if(confirm('Tem certeza que deseja deletar o usuario? <?php echo $linha ['nome'];?>')) location.href='../dao/deletes/delete_usuario.php?id=<?php echo $linha ['id_Usuario'];?>';"><i class="fas fa-trash"></i></a>
           </td>

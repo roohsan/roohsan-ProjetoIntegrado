@@ -9,7 +9,8 @@ box-sizing: border-box;
 }
 
 .container_login{
-	background-color:rgba(34,36,42,0.7);
+	
+	background: linear-gradient(to right, #22242A, #1A537E);
 	border-radius: 50px;
 	height: 80vh;
 	position: absolute;	
@@ -52,7 +53,7 @@ img{
 .btn1:hover{
 	background-color: black;
 	border: 1px solid;
-	color: rgba(0,152,121,0.7);
+	color:rgba(26,83,126,0.7);
 
 }
 .fonte{
@@ -60,5 +61,11 @@ img{
 	font-family: arial;
 	color: black;
 	text-align: center;	
+}
+
+.ativo{
+	font-weight: 900;
+	color: red;
+
 
 }

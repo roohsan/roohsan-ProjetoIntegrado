@@ -10,7 +10,7 @@
 	margin: 100px 30px 10px 0px;
 	height: 100px;
 	border-radius: 10px;
-	background-color: #1A537E;
+	background: linear-gradient(to right,#22242A,#1A537E);
 	color: white;
 }
 

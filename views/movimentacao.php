@@ -47,12 +47,9 @@
                             </button>
                             <div class="collapse navbar-collapse" id="navbarNav">
                                 <ul class="navbar-nav">
-                                  <li class="nav-item">
-                                    <a href="admin.php" class="nav-link"><i class="fas fa-desktop"></i> <span>HOME</span></a>
-                                  </li>
-                                  <li class="nav-item">
-                                    <a href="usuario.php" class="nav-link"><i class="fas fa-users"></i> <span>USUARIOS</span></a>
-                                  </li>
+                                    <li class="nav-item">
+                                      <a href="<?php echo $_SESSION ['perfil']?>" class="nav-link"><i class="fas fa-desktop"></i> <span>DASHBOARD</span></a>
+                                    </li>
                                   <li class="nav-item">
                                     <a href="produto.php" class="nav-link"><i class="fas fa-box-open"></i> <span>PRODUTOS</span></a>
                                   </li>
@@ -82,7 +79,7 @@
 <!--Botao do modal cadastro produtos-->        
         <button  id="botao_novo" type="button" class="user_btn" data-toggle="modal" data-target="#cadastro_modal" data-backdrop="static" data-keyboard="false"><i class="fas fa-people-carry"></i> NOVA</button>
 
-         <button  id="botao_novo" type="button" class="user_btn" data-toggle="modal" data-target="#mover_modal" data-backdrop="static" data-keyboard="false"><i class="fas fa-truck-moving"></i> MOVER</button>
+         <button  id="botao_novo" type="button" class="user_btn" data-toggle="modal" data-target="#mover_modal" data-backdrop="static" data-keyboard="false"><i class="fas fa-truck-loading"></i> MOVER</button>
          
 
 

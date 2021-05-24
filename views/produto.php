@@ -45,12 +45,9 @@
                             </button>
                             <div class="collapse navbar-collapse" id="navbarNav">
                                 <ul class="navbar-nav">
-                                  <li class="nav-item">
-                                    <a href="admin.php" class="nav-link"><i class="fas fa-desktop"></i> <span>HOME</span></a>
-                                  </li>
-                                  <li class="nav-item">
-                                    <a href="usuario.php" class="nav-link"><i class="fas fa-users"></i> <span>USUARIOS</span></a>
-                                  </li>
+                                    <li class="nav-item">
+                                      <a href="<?php echo $_SESSION ['perfil']?>" class="nav-link"><i class="fas fa-desktop"></i> <span>DASHBOARD</span></a>
+                                    </li>
                                   <li class="nav-item">
                                     <a href="endereco.php" class="nav-link"><i class="fas fa-map-signs"></i> <span>ENDEREÇAMENTO</span></a>
                                   </li>

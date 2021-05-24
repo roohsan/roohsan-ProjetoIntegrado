@@ -24,6 +24,7 @@ $aux = mysqli_fetch_assoc($result);
 
 $perfil = $aux['perfil'];
 $nome = $aux['nome'];
+$id_user = $aux['id_Usuario'];
 $aux_register;
 
 	
@@ -31,6 +32,7 @@ $aux_register;
 	if(($row==1)&&($perfil==1)){
 		$_SESSION ['usuario'] = $usuario;
 		$_SESSION ['nome'] = $nome;
+		$_SESSION ['perfil'] = "admin.php";
 		$aux_register = $nome;
 			header('location: ../views/admin.php');
 			exit();	
@@ -41,6 +43,8 @@ $aux_register;
 
 		$_SESSION ['usuario'] = $usuario;
 		$_SESSION ['nome'] = $nome;
+		$_SESSION ['perfil'] ="user.php" ;
+		$_SESSION ['id_user'] = $id_user;
 		header('location: ../views/user.php');
 		exit();
 		
