@@ -2,6 +2,7 @@
 //inclusao do arquivo conexao.php
 
 include('../conexao.php');
+include('../../control/autenticacaoBD.php');
 //
 $codigo = isset($_POST['codigo']) == true ? $_POST['codigo']:"";
 $nomeproduto = isset($_POST['nomeproduto']) == true ? $_POST['nomeproduto']:"";

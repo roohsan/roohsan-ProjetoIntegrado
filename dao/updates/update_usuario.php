@@ -2,6 +2,7 @@
 //inclusao do arquivo conexao.php
 
 include('../conexao.php');
+include('../../control/autenticacaoBD.php');
 //
 if(strcmp($_POST['senha'],$_POST['rsenha'])==0){
 $nome = isset($_POST['nome']) == true ? $_POST['nome']:"";

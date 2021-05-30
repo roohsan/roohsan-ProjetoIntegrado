@@ -49,10 +49,6 @@
                                   </li>
                                   <li class="nav-item">
                                     <a href="movimentacao.php" class="nav-link"><i class="fas fa-truck-moving"></i> <span>MOVIMENTAÇÕES</span></a>
-                                  </li>
-                                    <li class="nav-item">
-                                      <a href="relatorio.php" class="nav-link"><i class="fas fa-file-alt"></i></i> <span>RELATORIOS</span></a>
-                                  </li>
                                
                                   <li class="nav-item">
                                     <a   class=" nav-link logout_botao" onclick="window.location.href = '../control/logout.php'"><i class="fas fa-sign-out-alt icone"></i>SAIR</a>
@@ -73,7 +69,7 @@
 <!--Botao do modal cadastro produtos-->        
         <button  id="botao_novo" type="button" class="user_btn" data-toggle="modal" data-target="#cadastro_modal" data-backdrop="static" data-keyboard="false"><i class="fas fa-map-signs"></i> NOVO</button>
 
-
+         <button  id="rela_excel" type="button" onclick="window.location.href = '../relatorios/rela_excel_endereco.php'"><i class="fas fa-file-excel"></i> Relatorio</button>
 
 
 
@@ -119,18 +115,18 @@
 
 
   <!--exibição da lista de usuario -->  
-      <table class="table table-striped table-dark table-hover corpo" id="tabela_user">
+      <table class="table table-bordered table-dark table-border table-hover corpo" id="tabela_user">
 
 
 
         <thead>
           <tr>
-            <th scope="col">Rua</th>
-            <th scope="col">Nivel</th>
-            <th scope="col">Sequencia</th>
-            <th scope="col">Modulo</th>
-            <th scope="col">Dt. Cadastro</th>
-            <th scope="col">AÇÃO</th>
+            <th  style="text-align:center" scope="col">Rua</th>
+            <th  style="text-align:center" scope="col">Nivel</th>
+            <th  style="text-align:center" scope="col">Sequencia</th>
+            <th  style="text-align:center" scope="col">Modulo</th>
+            <th  style="text-align:center" scope="col">Dt. Cadastro</th>
+            <th  style="text-align:center" scope="col">AÇÃO</th>
 
           </tr>
         </thead>
@@ -139,17 +135,17 @@
       
       <?php do{ ?>
         <tr>
-            <td><?php echo $linha_endereco ['rua'];  ?></td>
-            <td><?php echo $linha_endereco ['nivel'];  ?></td>
-            <td><?php echo $linha_endereco ['sequencia'];  ?></td>
-            <td><?php echo $linha_endereco ['modulo'];  ?></td>
-            <td><?php echo date("d/m/y", strtotime($linha_endereco ['dataCadastro']));  ?></td>
+            <td style="text-align:center" ><?php echo $linha_endereco ['rua'];  ?></td>
+            <td style="text-align:center" ><?php echo $linha_endereco ['nivel'];  ?></td>
+            <td style="text-align:center" ><?php echo $linha_endereco ['sequencia'];  ?></td>
+            <td style="text-align:center" ><?php echo $linha_endereco ['modulo'];  ?></td>
+            <td style="text-align:center" ><?php echo date("d/m/y", strtotime($linha_endereco ['dataCadastro']));  ?></td>
 
    
 
 <!--Acionador do modal edição-->
         <!--data-whatever dados para o modal-->
-          <td>
+          <td style="text-align:center" >
             <a id="editar" type="button" data-toggle="modal" data-target="#edit_modal" data-backdrop="static" data-keyboard="false" data-whatever_id="<?php echo $linha_endereco ['id_endereco'];?>" data-whatever_rua="<?php echo $linha_endereco ['rua'];?>"
               data-whatever_nivel="<?php echo $linha_endereco ['nivel'];?>" data-whatever_sequencia="<?php echo $linha_endereco ['sequencia'];?>"><i class="fas fa-edit"></i></a> |
               <!--fim data-whatever dados para o modal-->

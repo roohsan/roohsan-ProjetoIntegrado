@@ -52,10 +52,6 @@
                                   </li>
                                   <li class="nav-item">
                                     <a href="movimentacao.php" class="nav-link"><i class="fas fa-truck-moving"></i> <span>MOVIMENTAÇÕES</span></a>
-                                  </li>
-                                    <li class="nav-item">
-                                      <a href="relatorio.php" class="nav-link"><i class="fas fa-file-alt"></i></i> <span>RELATORIOS</span></a>
-                                  </li>
                                
                                   <li class="nav-item">
                                     <a   class=" nav-link logout_botao" onclick="window.location.href = '../control/logout.php'"><i class="fas fa-sign-out-alt icone"></i>SAIR</a>
@@ -76,6 +72,7 @@
 <!--Botao do modal cadastro usuario-->        
         <button  id="botao_novo" type="button" class="user_btn" data-toggle="modal" data-target="#cadastro_modal" data-backdrop="static" data-keyboard="false"><i class="fas fa-user"></i> NOVO</button>
 
+         <button  id="rela_excel" type="button" onclick="window.location.href = '../relatorios/rela_excel_usuario.php'"><i class="fas fa-file-excel"></i> Relatorio</button>
 
 
 
@@ -139,17 +136,17 @@
 
 
   <!--exibição da lista de usuario -->  
-      <table class="table table-striped table-dark table-hover corpo" id="tabela_user">
+      <table class="table table-bordered table-dark table-border table-hover corpo" id="tabela_user">
 
 
 
         <thead>
           <tr>
-            <th scope="col">Nome</th>
-            <th scope="col">Login</th>
-            <th scope="col">Perfil</th>
-            <th scope="col">Dt. Cadastro</th>
-            <th scope="col">AÇÃO</th>
+            <th style="text-align:center" scope="col">Nome</th>
+            <th style="text-align:center" scope="col">Login</th>
+            <th style="text-align:center" scope="col">Perfil</th>
+            <th style="text-align:center" scope="col">Dt. Cadastro</th>
+            <th style="text-align:center" scope="col">AÇÃO</th>
 
           </tr>
         </thead>
@@ -158,8 +155,8 @@
       
       <?php do{ ?>
         <tr>
-            <td> <?php echo $linha ['nome'];  ?></td>
-            <td> <?php echo $linha ['usuario'];  ?></td>
+            <td style="text-align:center" > <?php echo $linha ['nome'];  ?></td>
+            <td style="text-align:center" > <?php echo $linha ['usuario'];  ?></td>
 
         <?php
           
@@ -171,14 +168,14 @@
               }
           
           ?>
-            <td> <?php echo $aux;  ?></td>
+            <td style="text-align:center" > <?php echo $aux;  ?></td>
 
-            <td> <?php echo date("d/m/y", strtotime($linha ['dataCadastro']));?></td>
+            <td style="text-align:center" > <?php echo date("d/m/y", strtotime($linha ['dataCadastro']));?></td>
 
             
 <!--Acionador do modal edição-->
         <!--data-whatever dados para o modal-->
-          <td>
+          <td style="text-align:center">
             <a id="editar" type="button" data-toggle="modal" data-target="#edit_modal" data-backdrop="static" data-keyboard="false" data-whatever_id="<?php echo $linha ['id_Usuario'];?>" data-whatever_nome="<?php echo $linha ['nome'];?>"
               data-whatever_usuario="<?php echo $linha ['usuario'];?>"><i class="fas fa-user-edit"></i></a> |
               <!--fim data-whatever dados para o modal-->

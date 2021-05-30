@@ -53,10 +53,6 @@
                                   </li>
                                   <li class="nav-item">
                                     <a href="movimentacao.php" class="nav-link"><i class="fas fa-truck-moving"></i> <span>MOVIMENTAÇÕES</span></a>
-                                  </li>
-                                    <li class="nav-item">
-                                      <a href="relatorio.php" class="nav-link"><i class="fas fa-file-alt"></i></i> <span>RELATORIOS</span></a>
-                                  </li>
                                
                                   <li class="nav-item">
                                     <a   class=" nav-link logout_botao" onclick="window.location.href = '../control/logout.php'"><i class="fas fa-sign-out-alt icone"></i>SAIR</a>
@@ -77,7 +73,7 @@
 <!--Botao do modal cadastro produtos-->        
         <button  id="botao_novo" type="button" class="user_btn" data-toggle="modal" data-target="#cadastro_modal" data-backdrop="static" data-keyboard="false"><i class="fas fa-box-open"></i> NOVO</button>
 
-
+         <button  id="rela_excel" type="button" onclick="window.location.href = '../relatorios/rela_excel_produto.php'"><i class="fas fa-file-excel"></i> Relatorio</button>
 
 
 <!--MODAL DA Cadastro produtos-->
@@ -162,20 +158,20 @@
 
 
   <!--exibição da lista de usuario -->  
-      <table class="table table-striped table-dark table-hover corpo" id="tabela_user">
+      <table class="table table-bordered table-dark table-border table-hover corpo" id="tabela_user">
 
 
 
         <thead>
           <tr>
-            <th scope="col">Codigo</th>
-            <th scope="col">Nome</th>
-            <th scope="col">Nome Curto</th>
-            <th scope="col">Quantidade</th>
-            <th scope="col">Unidade</th>
-            <th scope="col">Tipo</th>
-            <th scope="col">Dt.Cadastro</th>
-            <th scope="col">AÇÃO</th>
+            <th  style="text-align:center" scope="col">Codigo</th>
+            <th  style="text-align:center" scope="col">Nome</th>
+            <th  style="text-align:center" scope="col">Nome Curto</th>
+            <th  style="text-align:center" scope="col">Quantidade</th>
+            <th  style="text-align:center" scope="col">Unidade</th>
+            <th  style="text-align:center" scope="col">Tipo</th>
+            <th  style="text-align:center" scope="col">Dt.Cadastro</th>
+            <th  style="text-align:center" scope="col">AÇÃO</th>
 
           </tr>
         </thead>
@@ -184,19 +180,19 @@
       
       <?php do{ ?>
         <tr>
-            <td><?php echo $linha_produto ['codigo'];  ?></td>
-            <td><?php echo $linha_produto ['nome'];  ?></td>
-            <td><?php echo $linha_produto ['nomecurto'];  ?></td>
-            <td><?php echo $linha_produto ['quantidade'];  ?></td>
-            <td><?php echo $linha_produto ['unidade'];  ?></td>
-            <td><?php echo $linha_produto ['tipoProduto'];  ?></td>
-            <td><?php echo date("d/m/y", strtotime($linha_produto ['dataCadastro']));  ?></td>
+            <td style="text-align:center" ><?php echo $linha_produto ['codigo'];  ?></td>
+            <td style="text-align:center" ><?php echo $linha_produto ['nome'];  ?></td>
+            <td style="text-align:center" ><?php echo $linha_produto ['nomecurto'];  ?></td>
+            <td style="text-align:center" ><?php echo $linha_produto ['quantidade'];  ?></td>
+            <td style="text-align:center" ><?php echo $linha_produto ['unidade'];  ?></td>
+            <td style="text-align:center" ><?php echo $linha_produto ['tipoProduto'];  ?></td>
+            <td style="text-align:center" ><?php echo date("d/m/y", strtotime($linha_produto ['dataCadastro']));  ?></td>
 
    
 
 <!--Acionador do modal edição-->
         <!--data-whatever dados para o modal-->
-          <td>
+          <td style="text-align:center" >
             <a id="editar" type="button" data-toggle="modal" data-target="#edit_modal" data-backdrop="static" data-keyboard="false" data-whatever_id="<?php echo $linha_produto ['id_produto'];?>" data-whatever_nome="<?php echo $linha_produto ['nome'];?>"
               data-whatever_codigo="<?php echo $linha_produto ['codigo'];?>"  data-whatever_qtd="<?php echo $linha_produto ['quantidade'];?>" data-whatever_unidade="<?php echo $linha_produto ['unidade'];?>" data-whatever_tipo="<?php echo $linha_produto ['tipoProduto'];?>" data-whatever_nomecurto="<?php echo $linha_produto ['nomecurto'];?>" ><i class="fas fa-edit"></i></a> |
               <!--fim data-whatever dados para o modal-->

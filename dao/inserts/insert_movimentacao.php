@@ -1,6 +1,7 @@
 <?php
 //inclusao do arquivo conexao.php
 include('../../dao/conexao.php');
+include('../../control/autenticacaoBD.php');
 //variaveis do input
 $ru = isset($_POST['rua']) == true ? $_POST['rua']:"";
 $ni = isset($_POST['nivel']) == true ? $_POST['nivel']:"";
@@ -37,6 +38,8 @@ if(($quantidade<=$quant_pro)&&($quantidade>0)&&($ru!=$rua_move)&&($ni!=$nivel_mo
 
 		$query = "INSERT INTO `movimentacao` (`produto`, `quantidade`, `rua`, `deposito`, `nivel`, `sequencia`, `modulo`, `dataMovimentacao`, `usuario`,`pk_produto`) VALUES ('$produto', '$quantidade', '$ru', '$deposito', '$ni', '$seq', 'Par', current_date(),'$user','$pk_produto')";
 
+		$query_relatorio = "INSERT INTO `audi_relatorio` (`produto_audi`, `quantidade_audi`, `rua_audi`, `deposito_audi`, `nivel_audi`, `sequencia_audi`, `modulo_audi`, `dataMovimentacao_audi`, `usuario_audi`) VALUES ('$produto', '$quantidade', '$ru', '$deposito', '$ni', '$seq', 'Par', current_date(), '$user')";
+
 			$cal = $quant_pro - $quantidade;
 
 			$query_up_produto = "UPDATE `produto` SET `quantidade` = '$cal' WHERE (`id_produto` = '$pk_produto')";
@@ -46,6 +49,8 @@ if(($quantidade<=$quant_pro)&&($quantidade>0)&&($ru!=$rua_move)&&($ni!=$nivel_mo
 
 		$query = "INSERT INTO `movimentacao` (`produto`, `quantidade`, `rua`, `deposito`, `nivel`, `sequencia`, `modulo`, `dataMovimentacao`, `usuario`,`pk_produto`) VALUES ('$produto', '$quantidade', '$ru', '$deposito', '$ni', '$seq', 'Impar', current_date(), '$user','$pk_produto')";
 
+		$query_relatorio = "INSERT INTO `audi_relatorio` (`produto_audi`, `quantidade_audi`, `rua_audi`, `deposito_audi`, `nivel_audi`, `sequencia_audi`, `modulo_audi`, `dataMovimentacao_audi`, `usuario_audi`) VALUES ('$produto', '$quantidade', '$ru', '$deposito', '$ni', '$seq', 'Impar', current_date(), '$user')";
+
 			$cal = $quant_pro - $quantidade;
 
 			$query_up_produto = "UPDATE `produto` SET `quantidade` = '$cal' WHERE (`id_produto` = '$pk_produto')";
@@ -53,7 +58,10 @@ if(($quantidade<=$quant_pro)&&($quantidade>0)&&($ru!=$rua_move)&&($ni!=$nivel_mo
 
 }
 $result = mysqli_query($conexao,$query);
+
 $result2 = mysqli_query($conexao,$query_up_produto);
+
+$result3 = mysqli_query($conexao,$query_relatorio);
 
 
 

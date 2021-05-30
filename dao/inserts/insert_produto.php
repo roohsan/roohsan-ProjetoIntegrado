@@ -1,6 +1,7 @@
 <?php
 //inclusao do arquivo conexao.php
 include('../../dao/conexao.php');
+include('../../control/autenticacaoBD.php');
 //
 $codigo = isset($_POST['codigo']) == true ? $_POST['codigo']:"";
 $nome_produto = isset($_POST['nome_produto']) == true ? $_POST['nome_produto']:"";

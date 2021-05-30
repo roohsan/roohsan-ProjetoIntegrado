@@ -20,7 +20,7 @@ session_start();
 		<title>HOME</title>
   </head>
 
-  <body class="body">
+  <body class="body_login">
 
 <div class="container container_login">
 

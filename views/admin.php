@@ -31,30 +31,14 @@
 <header>
           <nav class="navbar navbar-expand-lg nav_light nav_bar">
             <div>
-              <span class="navbar-brand" href="admin.php" id="logo"><i class="fas fa-user-plus"></i> <?php echo $_SESSION ['usuario'] ?></span>
+              <span class="navbar-brand" id="logo"><i class="fas fa-user-plus"></i> <?php echo $_SESSION ['usuario'] ?></span>
              </div> 
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
 
               </button>
               <div class="collapse navbar-collapse" id="navbarNav">
-                  <ul class="navbar-nav">
-                    <li class="nav-item">
-                      <a href="usuario.php" class="nav-link"><i class="fas fa-users"></i> <span>USUARIOS</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="produto.php" class="nav-link"><i class="fas fa-box-open"></i> <span>PRODUTOS</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="endereco.php" class="nav-link"><i class="fas fa-map-signs"></i> <span>ENDEREÇAMENTO</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="movimentacao.php" class="nav-link"><i class="fas fa-truck-moving"></i> <span>MOVIMENTAÇÕES</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="relatorio.php" class="nav-link"><i class="fas fa-file-alt"></i></i> <span>RELATORIOS</span></a>
-                    </li>
-                 
+                  <ul class="navbar-nav">                 
                     <li class="nav-item">
                       <a   class=" nav-link logout_botao" onclick="window.location.href = '../control/logout.php'"><i class="fas fa-sign-out-alt icone"></i>SAIR</a>
                     </li>
@@ -78,7 +62,7 @@
                 </div>
                 <div class="card-body">
                     <H1><?php echo $count_user?></H1>
-                  <a href="usuario.php" class="btn">Ativo(s)</a>
+                  <a href="usuario.php" class="btn">Ativo(s) <i class="fas fa-link"></i></a>
                 </div>
               </div>
 
@@ -88,7 +72,7 @@
         </div>
         <div class="card-body">
             <H1><?php echo $count_pro?></H1>
-          <a href="produto.php" class="btn">Ativo(s)</a>
+          <a href="produto.php" class="btn">Ativo(s) <i class="fas fa-link"></i></a>
         </div>
       </div>
 
@@ -98,11 +82,9 @@
         </div>
         <div class="card-body">
               <H1><?php echo $count_ende?></H1>
-          <a href="endereco.php" class="btn">Ativo(s)</a>
+          <a href="endereco.php" class="btn">Ativo(s) <i class="fas fa-link"></i></a>
         </div>
       </div>
-
-
 
 
       <div class="card">
@@ -111,7 +93,7 @@
           </div>
           <div class="card-body">
               <H1><?php echo $count_movi?></H1>
-            <a href="movimentacao.php" class="btn">Realizada(s)</a>
+            <a href="movimentacao.php" class="btn">Realizada(s) <i class="fas fa-link"></i></a>
           </div>
       </div>
     </div>

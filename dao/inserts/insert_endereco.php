@@ -1,6 +1,7 @@
 <?php
 //inclusao do arquivo conexao.php
 include('../../dao/conexao.php');
+include('../../control/autenticacaoBD.php');
 //
 $rua = isset($_POST['rua']) == true ? $_POST['rua']:"";
 $nivel = isset($_POST['nivel']) == true ? $_POST['nivel']:"";

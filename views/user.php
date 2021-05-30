@@ -22,7 +22,9 @@
     <link rel="stylesheet" href="../css/stylo_usuario.css">
     <link rel="stylesheet" href="../css/cardsDashboard.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-    <script src="../js/ajax/ajax_senha_edit.js"></script>
+    <script src="../js/feedback/feedback_senha_user.js"></script>
+    
+
 
 
     <title>DASHBOARD</title>
@@ -33,7 +35,7 @@
 <header>
           <nav class="navbar navbar-expand-lg nav_light nav_bar">
             <div>
-              <span class="navbar-brand" href="admin.php" id="logo"><i class="far fa-user"></i> <?php echo $_SESSION ['usuario'] ?></span>
+              <span class="navbar-brand" id="logo"><i class="far fa-user"></i> <?php echo $_SESSION ['usuario'] ?></span>
              </div> 
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -41,18 +43,6 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarNav">
                   <ul class="navbar-nav">
-                    <li class="nav-item">
-                      <a href="produto.php" class="nav-link"><i class="fas fa-box-open"></i> <span>PRODUTOS</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="endereco.php" class="nav-link"><i class="fas fa-map-signs"></i> <span>ENDEREÇAMENTO</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="movimentacao.php" class="nav-link"><i class="fas fa-truck-moving"></i> <span>MOVIMENTAÇÕES</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="relatorio.php" class="nav-link"><i class="fas fa-file-alt"></i></i> <span>RELATORIOS</span></a>
-                    </li>
                  
                     <li class="nav-item">
                       <a   class=" nav-link logout_botao" onclick="window.location.href = '../control/logout.php'"><i class="fas fa-sign-out-alt icone"></i>SAIR</a>
@@ -73,11 +63,11 @@
 <div class="row">
       <div class="card">
         <div class="card-header">
-            <h1><i class="fas fa-users-cog"></i></i> </i> <?php echo $_SESSION ['usuario'] ?></h1>
+            <h1><i class="fas fa-users-cog"></i></i> </i> <?php echo $_SESSION ['nome'] ?></h1>
                 </div>
                 <div class="card-body">
-                    <H3>Olá </i> <?php echo $_SESSION ['usuario'] ?> deseja alterar sua senha?</H3>
-                  <a id="editar" type="button" data-toggle="modal" data-target="#edit_modal" data-backdrop="static" data-keyboard="false" class="btn">Clique aqui!</a>
+                    <H3>Olá, </i> <?php echo $_SESSION ['usuario'] ?>, deseja alterar sua senha?</H3>
+                  <a id="editar" type="button" data-toggle="modal" data-target="#edit_senha" data-backdrop="static" data-keyboard="false" class="btn"><i class="fas fa-arrow-right"></i> Clique aqui! <i class="fas fa-arrow-left"></i></a>
                 </div>
               </div>
 
@@ -87,7 +77,7 @@
         </div>
         <div class="card-body">
             <H1><?php echo $count_pro?></H1>
-          <a href="produto.php" class="btn">Ativo(s)</a>
+          <a href="produto.php" class="btn">Ativo(s) <i class="fas fa-link"></i></a>
         </div>
       </div>
 
@@ -97,7 +87,7 @@
         </div>
         <div class="card-body">
               <H1><?php echo $count_ende?></H1>
-          <a href="endereco.php" class="btn">Ativo(s)</a>
+          <a href="endereco.php" class="btn">Ativo(s) <i class="fas fa-link"></i></a>
         </div>
       </div>
 
@@ -110,7 +100,7 @@
           </div>
           <div class="card-body">
               <H1><?php echo $count_movi?></H1>
-            <a href="movimentacao.php" class="btn">Realizada(s)</a>
+            <a href="movimentacao.php" class="btn">Realizada(s) <i class="fas fa-link"></i></a>
           </div>
       </div>
     </div>
@@ -124,11 +114,11 @@
   </div>
 
 
-  <div class="modal fade t-modal" id="edit_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal fade t-modal" id="edit_senha" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLongTitle">EDITAR USUARIO</h5>
+                      <h5 class="modal-title" id="exampleModalLongTitle">EDITAR SENHA</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
@@ -136,24 +126,23 @@
                     <div class="modal-body">
 
     <!-- formulario de cadastro-->
-                  <form name="form-editar" id="senha_edit" method="post">
+                  <form name="form-editar" id="senha_edit" method="post" action="../dao/updates/update_senha.php" >
 
                                 <div class="inputs_login">  
-                                  <input type="text" name="nome" class="input_modal" id="renome" value="<?php echo $_SESSION ['nome'] ?>" readonly></input>
+                                  <input type="text" name="nome" class="input_modal" id="renome" value="<?php echo $_SESSION ['nome'] ?>" DISABLED></input>
                                 </div>
 
                                 <div class="inputs_login">
-                                  <input type="text" name="login" class="input_modal_senha" id="relogin" value="<?php echo $_SESSION ['usuario'] ?>" readonly></input>
+                                  <input type="text" name="login" class="input_modal_senha" id="relogin" value="<?php echo $_SESSION ['usuario'] ?>" DISABLED></input>
                                 </div>
 
                                 <div class="inputs_login">
                                   <input type="password" name="senha" class="input_modal_senha" id="resenha" placeholder="Senha"required></input>
                                   <input type="password" name="rsenha" class="input_modal_senha" id="rersenha" placeholder="Repita Senha"required></input>
-                                  <input type="" name="eperfil" value= "2" class="input_modal_senha" id="reperfil" required></input>
                                 </div>
 
                                 <div>
-                                      <input type="" name="id" id="rid_Usuario" value="<?php echo $_SESSION ['id_user'] ?>"  ></input>
+                                      <input type="hidden" name="id" id="rid_Usuario" value="<?php echo $_SESSION ['id_user'] ?>"  ></input>
                                 </div>
 
                                 
@@ -161,7 +150,7 @@
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="window.location.href = 'user.php'">Cancelar</button>
-                        <button type="" class="btn btn-success" id="salvar">Gravar</button>
+                        <button type="submit" class="btn btn-success" id="save_senha">Gravar</button>
                       </div>
 
 
@@ -182,10 +171,7 @@
 
 
 </body>
-    
-    <script src="../js/conteudo_modal/conteudo_user_modal.js"></script>
-    <script src="../js/app.js"></script>
-    <script src="../jquery/jquery.js"></script>
+    <script src="../jquery/jquery.min.js"></script>
     <script src="../bootstrap/js/bootstrap.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js"></script>
 

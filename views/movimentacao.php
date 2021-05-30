@@ -55,10 +55,6 @@
                                   </li>
                                   <li class="nav-item">
                                     <a href="endereco.php" class="nav-link"><i class="fas fa-map-signs"></i> <span>ENDEREÇAMENTO</span></a>
-                                  </li>
-                                    <li class="nav-item">
-                                      <a href="relatorio.php" class="nav-link"><i class="fas fa-file-alt"></i></i> <span>RELATORIOS</span></a>
-                                  </li>
                                
                                   <li class="nav-item">
                                     <a   class=" nav-link logout_botao" onclick="window.location.href = '../control/logout.php'"><i class="fas fa-sign-out-alt icone"></i>SAIR</a>
@@ -79,7 +75,9 @@
 <!--Botao do modal cadastro produtos-->        
         <button  id="botao_novo" type="button" class="user_btn" data-toggle="modal" data-target="#cadastro_modal" data-backdrop="static" data-keyboard="false"><i class="fas fa-people-carry"></i> NOVA</button>
 
-         <button  id="botao_novo" type="button" class="user_btn" data-toggle="modal" data-target="#mover_modal" data-backdrop="static" data-keyboard="false"><i class="fas fa-truck-loading"></i> MOVER</button>
+         <button  id="rela_excel" type="button" onclick="window.location.href = '../relatorios/rela_excel_movimentacao.php'"><i class="fas fa-file-excel"></i> Relatorio</button>
+
+
          
 
 
@@ -220,22 +218,22 @@
 
 
   <!--exibição da lista de usuario -->  
-      <table class="table table-striped table-dark table-hover corpo" id="tabela_user">
+      <table class="table table-bordered table-dark table-border table-hover corpo" id="tabela_user">
 
 
 
         <thead>
           <tr>
-            <th scope="col">Usuario</th>
-            <th scope="col">Produto</th>
-            <th scope="col">Quantidade</th>
-            <th scope="col">Deposito</th>
-            <th scope="col">Rua</th>
-            <th scope="col">Nivel</th>
-            <th scope="col">Sequencia</th>
-            <th scope="col">Modulo</th>
-            <th scope="col">Dt. Cadastro</th>
-            <th scope="col">AÇÃO</th>
+            <th style="text-align:center" scope=" col">Usuario</th>
+            <th style="text-align:center" scope="col">Produto</th>
+            <th style="text-align:center" scope="col">Quantidade</th>
+            <th style="text-align:center" scope="col">Deposito</th>
+            <th style="text-align:center" scope="col">Rua</th>
+            <th style="text-align:center" scope="col">Nivel</th>
+            <th style="text-align:center" scope="col">Sequencia</th>
+            <th style="text-align:center" scope="col">Modulo</th>
+            <th style="text-align:center" scope="col">Dt. Cadastro</th>
+            <th style="text-align:center" scope="col">AÇÃO</th>
 
           </tr>
         </thead>
@@ -244,23 +242,21 @@
       
       <?php do{ ?>
         <tr>
-            <td><?php echo $linha ['usuario'];  ?></td>
-            <td><?php echo $linha ['produto'];  ?></td>
-            <td><?php echo $linha ['quantidade'];  ?></td>
-            <td><?php echo $linha ['deposito'];  ?></td>
-            <td><?php echo $linha ['rua'];  ?></td>
-            <td><?php echo $linha ['nivel'];  ?></td>
-            <td><?php echo $linha ['sequencia'];  ?></td>
-            <td><?php echo $linha ['modulo'];  ?></td>
-            <td><?php echo date("d/m/y", strtotime($linha ['dataMovimentacao']));  ?></td>
+            <td style="text-align:center" ><?php echo $linha ['usuario'];  ?></td>
+            <td style="text-align:center"><?php echo $linha ['produto'];  ?></td>
+            <td style="text-align:center"><?php echo $linha ['quantidade'];  ?></td>
+            <td style="text-align:center"><?php echo $linha ['deposito'];  ?></td>
+            <td style="text-align:center"><?php echo $linha ['rua'];  ?></td>
+            <td style="text-align:center"><?php echo $linha ['nivel'];  ?></td>
+            <td style="text-align:center"><?php echo $linha ['sequencia'];  ?></td>
+            <td style="text-align:center"><?php echo $linha ['modulo'];  ?></td>
+            <td style="text-align:center"><?php echo date("d/m/y", strtotime($linha ['dataMovimentacao']));  ?></td>
 
    
 
 <!--Acionador do modal edição-->
         <!--data-whatever dados para o modal-->
-          <td>
-            <a id="editar" type="button" data-toggle="modal" data-target="#edit_modal" data-backdrop="static" data-keyboard="false" data-whatever_id="<?php echo $linha ['id_endereco'];?>" data-whatever_rua="<?php echo $linha ['rua'];?>"
-              data-whatever_nivel="<?php echo $linha ['nivel'];?>" data-whatever_sequencia="<?php echo $linha ['sequencia'];?>"><i class="fas fa-edit"></i></a> |
+          <td style="text-align:center">
               <!--fim data-whatever dados para o modal-->
             <a  id="deletar" href="javascript:if(confirm('Tem certeza que deseja estornar a movimentação do produto? Produto-<?php echo $linha ['produto'];?>')) location.href='../dao/deletes/delete_movimentacao.php?id=<?php echo $linha ['idmovimentacao'];?>';"><i class="fas fa-trash"></i></a>
           </td>
@@ -276,49 +272,6 @@
       </table>
 
 <!--teste de limitador deletar ate aqui-->
-
-<!--MODAL DA edição-->
-                <div class="modal fade t-modal" id="edit_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLongTitle">EDITAR ENDEREÇOS</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-
-    <!-- formulario de cadastro-->
-    <form name="form-cadastrar" id="edit_endereco_form"  method="post">
-                  <div class="inputs_login">  
-
-                          <div class="inputs_login">  
-
-                                <div class="inputs_login">  
-                                          <input type="text" name="rua" class="input_modal_senha" id="erua" placeholder="Rua" readonly=""></input>
-                                          <input name="nivel" class="input_modal_senha" id="enivel" placeholder="Nivel Ex: 1,2,3" readonly=""></input>
-                                          <input name="sequencia" class="input_modal_senha" id="esequencia" placeholder="Sequencia Ex:1,2,3" readonly></input>
-
-                                         <div>
-                                              <input type="hidden" name="id" id="id_endereco"></input>
-                                        </div>
-                                 </div>
-
-                                              
-
-                                    </div>
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="window.location.href = 'movimentacao.php'">Cancelar</button>
-                                      <button  type="submit" class="btn btn-success" id="ende_ed_gravar">Gravar</button>
-                                    </div>
-                    </form>
-    <!-- fim do formulario de cadastro-->
-                  </div>
-                </div>
-              </div>
-
-          </div>
 
 
 
