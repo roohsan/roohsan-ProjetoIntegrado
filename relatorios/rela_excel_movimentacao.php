@@ -26,7 +26,7 @@ include('../control/autenticacao.php');
   		$html = '';
   		$html .= '<table border="1">';
   		$html .= '<tr>';
-  		$html .= '<td colspan="9" style="text-align:center"><b>Movimentações Realizadas</b></tr>';
+  		$html .= '<td colspan="10" style="text-align:center"><b>Movimentações Realizadas</b></tr>';
   		$html .= '</tr>';
 
   		$html .= '<tr>';
@@ -39,6 +39,7 @@ include('../control/autenticacao.php');
   		$html .= '<td style="text-align:center"><b>Sequencia</b></td>';
   		$html .= '<td style="text-align:center"><b>Moddulo</b></td>';
   		$html .= '<td style="text-align:center"><b>Dt. Cadastro</b></td>';
+  		$html .= '<td style="text-align:center"><b>Status</b></td>';
   		$html .= '</tr>';
 
   		do{
@@ -52,6 +53,7 @@ include('../control/autenticacao.php');
   				$html .= '<td style="text-align:center">'.$linha_movi_relatorio["sequencia_audi"].'</td>';
   				$html .= '<td style="text-align:center">'.$linha_movi_relatorio["modulo_audi"].'</td>';
   				$html .= '<td style="text-align:center">'.date("d/m/y", strtotime($linha_movi_relatorio ['dataMovimentacao_audi'])).'</td>';
+  				$html .= '<td style="text-align:center">'.$linha_movi_relatorio["status"].'</td>';
 
   				$html .= '</tr>';
 

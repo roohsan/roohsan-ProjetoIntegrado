@@ -38,7 +38,7 @@ if(($quantidade<=$quant_pro)&&($quantidade>0)&&($ru!=$rua_move)&&($ni!=$nivel_mo
 
 		$query = "INSERT INTO `movimentacao` (`produto`, `quantidade`, `rua`, `deposito`, `nivel`, `sequencia`, `modulo`, `dataMovimentacao`, `usuario`,`pk_produto`) VALUES ('$produto', '$quantidade', '$ru', '$deposito', '$ni', '$seq', 'Par', current_date(),'$user','$pk_produto')";
 
-		$query_relatorio = "INSERT INTO `audi_relatorio` (`produto_audi`, `quantidade_audi`, `rua_audi`, `deposito_audi`, `nivel_audi`, `sequencia_audi`, `modulo_audi`, `dataMovimentacao_audi`, `usuario_audi`) VALUES ('$produto', '$quantidade', '$ru', '$deposito', '$ni', '$seq', 'Par', current_date(), '$user')";
+		$query_relatorio = "INSERT INTO `audi_relatorio` (`produto_audi`, `quantidade_audi`, `rua_audi`, `deposito_audi`, `nivel_audi`, `sequencia_audi`, `modulo_audi`, `dataMovimentacao_audi`, `usuario_audi`,`status`) VALUES ('$produto', '$quantidade', '$ru', '$deposito', '$ni', '$seq', 'Par', current_date(), '$user', 'M')";
 
 			$cal = $quant_pro - $quantidade;
 
@@ -49,7 +49,7 @@ if(($quantidade<=$quant_pro)&&($quantidade>0)&&($ru!=$rua_move)&&($ni!=$nivel_mo
 
 		$query = "INSERT INTO `movimentacao` (`produto`, `quantidade`, `rua`, `deposito`, `nivel`, `sequencia`, `modulo`, `dataMovimentacao`, `usuario`,`pk_produto`) VALUES ('$produto', '$quantidade', '$ru', '$deposito', '$ni', '$seq', 'Impar', current_date(), '$user','$pk_produto')";
 
-		$query_relatorio = "INSERT INTO `audi_relatorio` (`produto_audi`, `quantidade_audi`, `rua_audi`, `deposito_audi`, `nivel_audi`, `sequencia_audi`, `modulo_audi`, `dataMovimentacao_audi`, `usuario_audi`) VALUES ('$produto', '$quantidade', '$ru', '$deposito', '$ni', '$seq', 'Impar', current_date(), '$user')";
+		$query_relatorio = "INSERT INTO `audi_relatorio` (`produto_audi`, `quantidade_audi`, `rua_audi`, `deposito_audi`, `nivel_audi`, `sequencia_audi`, `modulo_audi`, `dataMovimentacao_audi`, `usuario_audi`,`status`) VALUES ('$produto', '$quantidade', '$ru', '$deposito', '$ni', '$seq', 'Impar', current_date(), '$user', 'M')";
 
 			$cal = $quant_pro - $quantidade;
 
