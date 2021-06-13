@@ -20,6 +20,10 @@
               senha:$("#senha").val("");
               rsenha:$("#rsenha").val("");
               perfil:$("#perfil").val("");
+
+              
+              
+              //alert('Usuario ja cadastrado!','success');
             console.log(e);
             });
             return false;
